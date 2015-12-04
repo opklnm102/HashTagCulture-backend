@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+        <!--  load configuration file -->
+         <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+          <property name="locations">
+           <value>/WEB-INF/config/config.properties</value>
+          </property>
+         </bean>
+         
+        <!--  create rest service object and inject dao -->
+        <bean class="spring.hashcul.service.ContactService" id="contactService">
+               <property name="contactDao" ref="contactdao" />
+        </bean>
+        <!-- declare dao object  -->
+        <bean class="spring.hashcul.dao.ContactDaoImpl" id="contactdao">
+               <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+        </bean>
+       
+        <!--
+               mybatis configuration
+               sqlSessionFactory & sqlSessionTemplate are required
+         -->
+        <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+               <property name="dataSource" ref="dataSource" />
+               <property name="configLocation" value="/WEB-INF/config/mybatis-config.xml"/>
+        </bean>
+        <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+               <constructor-arg ref="sqlSessionFactory" />
+        </bean>
+       
+        <!-- 
+               data source configuration
+               for testing purpose , it uses simple jdbc datasource
+         -->
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+               <property name="driverClass" value="${mybatis.jdbc.driverclass}"/>
+               <property name="url" value="${mybatis.jdbc.url}" />
+               <property name="username" value="${mybatis.jdbc.username}" />
+               <property name="password" value="${mybatis.jdbc.password}" />
+        </bean>
+</beans>
