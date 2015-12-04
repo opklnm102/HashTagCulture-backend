@@ -441,3 +441,14 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/HashTagCulture
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669) [org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar:na]
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608) [org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar:na]
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515) [org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar:na]
+2015-12-04 15:04:56,617 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: hashcul:hashcul:1.0-SNAPSHOT @ /Users/Leeseolhee/HashTagCulture-backend/HashTagCultureRest/pom.xml.
+2015-12-04 15:04:56,617 [Worker-18] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: hashcul:hashcul:1.0-SNAPSHOT @ /Users/Leeseolhee/HashTagCulture-backend/HashTagCultureRest/pom.xml.
+2015-12-04 15:04:58,447 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-12-04 15:04:58,464 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-12-04 15:04:58,476 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-12-04 15:04:58,477 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Leeseolhee/HashTagCulture-backend/HashTagCultureRest/src/test/resources
+2015-12-04 15:04:59,486 [Worker-19] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: hashcul:hashcul:1.0-SNAPSHOT @ /Users/Leeseolhee/HashTagCulture-backend/HashTagCultureRest/pom.xml.
+2015-12-04 15:05:00,958 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-12-04 15:05:00,969 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-12-04 15:05:00,972 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-12-04 15:05:00,973 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Leeseolhee/HashTagCulture-backend/HashTagCultureRest/src/test/resources
