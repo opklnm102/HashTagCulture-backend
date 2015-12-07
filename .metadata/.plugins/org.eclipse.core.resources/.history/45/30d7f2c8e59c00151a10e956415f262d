@@ -1,0 +1,89 @@
+ package spring.hashcul.service;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+
+import spring.hashcul.dao.ListDao;
+import spring.hashcul.model.ListInfoVo;
+ 
+
+ 
+@Path("/list")
+public class ListService {
+        static ListDao dao = null;
+        public void setListDao(ListDao dao){this.dao = dao;}
+        public ListService(){
+               //if(dao == null)      setContactDao(new ContactDao());
+        }
+       
+        /**
+         * Query Contact record by email id
+         * @param email
+         * @return
+         */
+        
+        @GET
+        @Produces(MediaType.APPLICATION_JSON)
+        @Path("/some")
+        public List<ListInfoVo> getsome(){	
+        		
+        	Map<String, Object> params = new HashMap<String, Object>();
+        	String[] categories = {"연극"};
+        	String[] locations = {"서울"};
+        	params.put("categories", categories);
+        	params.put("locations", locations);
+        	
+        	return dao.getList(params);
+        	//return dao.getList();
+        }
+        
+        /*@GET
+        @Produces(MediaType.APPLICATION_JSON)
+        public List<ListInfoVo> get(@RequestParam Map<String, Object> params){	
+        		
+        	return dao.getList(params);
+        }*/
+        
+        /*@GET
+        @Produces(MediaType.APPLICATION_JSON)
+        @Consumes(MediaType.APPLICATION_JSON)
+        public List<ListInfoVo> get(@RequestParam("categories") String[] categories, @RequestParam("locations") String locations){	
+        	
+        	Map<String, Object> params = new HashMap<String, Object>();
+        	params.put("categories", categories);
+        	params.put("locations", locations);
+        	
+        	//return dao.getList(params);
+        	return dao.getList();
+        }*/
+        
+        
+        /*@GET
+        @Produces(MediaType.APPLICATION_JSON)
+        public String submit(@RequestParam(value="value1", required=true) List<String> values) {
+            System.out.println(values.size());
+            return "OK";
+        }*/
+        
+        @GET
+        @Produces(MediaType.APPLICATION_JSON)
+        public List<ListInfoVo> submit() {
+            return dao.getList();
+        }
+        
+
+        
+        /*@GET
+        @Produces(MediaType.APPLICATION_JSON)
+        @Path("{email}")
+        public String get(@PathParam("email") String email){
+               return "OK";
+        }*/
+
+}

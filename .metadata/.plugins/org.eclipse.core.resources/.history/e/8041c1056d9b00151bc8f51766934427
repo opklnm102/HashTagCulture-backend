@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="listdao">
+        <!-- 
+               select list by category startdate enddate
+        -->
+        
+         <resultMap  id="spring.hashcul.model.List" type="spring.hashcul.model.ListVo">
+               <result column="title" property="title"/>
+               <result column="category" property="category"/>
+               <result column="startdate" property="startdate"/>
+               <result column="enddate" property="enddate"/>
+        </resultMap>
+        
+        
+        <select id="getList" parameterType="Map" resultMap="spring.hashcul.model.ListVo">
+               select *
+               from list_table
+               where category = #{category} AND startdate => #{startdate} AND enddate <= #{enddate}
+        </select>
+</mapper>

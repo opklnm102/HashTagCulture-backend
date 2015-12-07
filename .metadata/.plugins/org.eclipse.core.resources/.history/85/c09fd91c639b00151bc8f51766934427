@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="listdao">
+        <!-- 
+               select list by category startdate enddate
+        -->
+        
+         <resultMap  id="spring.hashcul.model.List" type="spring.hashcul.model.ListVo">
+               <id column="categories" property="categories"/>
+               <id column="locations" property="locations"/>
+               <id column="startdate" property="categories"/>
+                 
+               <result column="title" property="title"/>
+               <result column="category" property="category"/>
+               <result column="startdate" property="startdate"/>
+               <result column="enddate" property="enddate"/>
+        </resultMap>
+        
+        
+        <select id="getList" resultMap="spring.hashcul.model.ListVo">
+               select *
+               from list_table
+               where categories = #{email}
+        </select>
+</mapper>

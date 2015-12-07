@@ -1,0 +1,10 @@
+package spring.hashcul.dao;
+
+import java.util.List;
+
+import spring.hashcul.model.ListInfoVo;
+
+public interface ListDao {
+    public  List<ListInfoVo> get(String[] categories, String[] locations, String startDate, String endDate);
+    
+}

@@ -10,6 +10,8 @@
                <result column="name" property="name"/>
                <result column="phone" property="phone"/>
         </resultMap>
+        
+        
         <select id="getUserByEmail" parameterType="String" resultMap="spring.hashcul.model.ContactVo">
                select email,name,phone
                from contact_table

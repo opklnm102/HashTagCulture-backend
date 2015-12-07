@@ -1,0 +1,20 @@
+package spring.hashcul.dao;
+
+import java.util.List;
+
+import org.mybatis.spring.support.SqlSessionDaoSupport;
+
+import spring.hashcul.model.ListVo;
+
+public class ListDaoImpl extends SqlSessionDaoSupport implements ListDao {
+
+	public List<ListVo> get(String[] categories, String[] locations, String startDate, String endDate) {
+		
+		List<ListVo> list = getSqlSession().selectList("listdao.getList");
+		
+		return list;
+	}
+	
+	
+
+}

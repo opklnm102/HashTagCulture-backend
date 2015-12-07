@@ -1,0 +1,34 @@
+package spring.hashcul.dao;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.mybatis.spring.support.SqlSessionDaoSupport;
+
+import spring.hashcul.model.ListInfoVo;
+
+public class ListDaoImpl extends SqlSessionDaoSupport implements ListDao {
+
+	public List<ListInfoVo> getList(Map<String, Object> params) {
+		
+		List<ListInfoVo> list;
+		HashMap<String, Object> xmlparameter = new HashMap<String, Object>();
+		
+		String[] categories = (String[]) params.get("categories");
+		String[] locations = (String[]) params.get("locations");
+		int startdate = Integer.parseInt((String)params.get("startdate"));
+		int enddate = Integer.parseInt((String)params.get("enddate"));
+		
+		
+		
+		list= (List<ListInfoVo>)getSqlSession().selectList("listdao.getList", xmlparameter);
+
+		return list;
+	}
+	
+	
+	
+	
+
+}

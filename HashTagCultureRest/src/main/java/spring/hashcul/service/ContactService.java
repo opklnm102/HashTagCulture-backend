@@ -12,9 +12,7 @@ import javax.ws.rs.core.Response;
 
 import spring.hashcul.dao.ContactDao;
 import spring.hashcul.model.ContactVo;
- 
 
- 
 @Path("/contact")
 public class ContactService {
         static ContactDao dao = null;
@@ -32,8 +30,7 @@ public class ContactService {
         @Consumes(MediaType.APPLICATION_JSON)
         public Response create(ContactVo contact){
                dao.create(contact);
-               return Response.status(200).entity(contact).build();
- 
+               return Response.status(200).entity(contact).build(); 
         }
         /**
          * Query Contact record by email id
@@ -46,6 +43,8 @@ public class ContactService {
         public ContactVo get(@PathParam("email") String email){
                return dao.get(email);
         }
+        
+             
         /**
          * Upadte Contact Record by email
          * @param email

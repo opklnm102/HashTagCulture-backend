@@ -14,6 +14,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/Users/Leeseolhee/Downloads/source-3"/>
 			<item value="/Users/Leeseolhee/HashTagCulture-backend/HashTagCultureRest"/>
 		</list>
 		<list key="projectNameTemplate">
