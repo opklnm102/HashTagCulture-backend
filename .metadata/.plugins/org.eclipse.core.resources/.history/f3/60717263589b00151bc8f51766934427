@@ -1,8 +1,0 @@
-package spring.hashcul.dao;
-
-import spring.hashcul.model.ContactVo;
-
-public interface ListDao {
-    public ContactVo get(String email);
-    
-}
