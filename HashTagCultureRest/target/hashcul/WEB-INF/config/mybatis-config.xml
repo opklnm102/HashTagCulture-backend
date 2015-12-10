@@ -6,8 +6,8 @@
   <setting name="useGeneratedKeys" value="true" />
   <setting name="defaultExecutorType" value="REUSE" />
  </settings>
- 
- <mappers>
-  <mapper resource="sqlmap/ContactDao_map.xml" />
+
+  <mappers>
+  <mapper resource="sqlmap/ListDao_map.xml" />
  </mappers>
 </configuration>

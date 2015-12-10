@@ -1,0 +1,10 @@
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3307/lesuladb
+jdbc.username=lesula
+jdbc.password=lesula
+c3p0.acquireIncrement=2
+c3p0.minPoolSize=10
+c3p0.maxPoolSize=50
+c3p0.maxStatements=50
+c3p0.idleTestPeriod=1800
+c3p0.timeout=1200

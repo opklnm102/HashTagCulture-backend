@@ -28,11 +28,12 @@ public class ListService {
          * @return
          */
         
-        @GET
+        //현재메소드 호출이 안됨
+        /*@GET
         @Produces(MediaType.APPLICATION_JSON)
         public List<ListInfoVo> searchList(@RequestParam Map<String, Object> params){	
         	return dao.getList(params);
-        }
+        }*/
 
         
         

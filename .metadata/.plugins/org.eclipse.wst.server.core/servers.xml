@@ -3,7 +3,7 @@
   <server auto-publish-setting="1" hostname="Cloud" id="HashTagCulture-Server" name="HashTagCulture-Server" org.cloudfoundry.ide.eclipse.org="codekorea19" org.cloudfoundry.ide.eclipse.serverId="rain00723@gmail.com_codekorea19_ckspace19@http://api.paas.codekorea.kr" org.cloudfoundry.ide.eclipse.space="ckspace19" org.cloudfoundry.ide.eclipse.url="http://api.paas.codekorea.kr" org.cloudfoundry.ide.eclipse.username="rain00723@gmail.com" runtime-id="HashTagCulture-Server" server-type="org.cloudfoundry.appcloudserver.10" server-type-id="org.cloudfoundry.appcloudserver.10" start-timeout="600" stop-timeout="60" timestamp="2">
     <list key="modules" value0="HashTagCulture::org.eclipse.jst.jee.server:HashTagCulture::jst.web::2.5"/>
   </server>
-  <server hostname="localhost" id="J2EE Preview at localhost" name="J2EE Preview at localhost" runtime-id="J2EE Preview" server-type="org.eclipse.jst.server.preview.server" server-type-id="org.eclipse.jst.server.preview.server" start-timeout="240" stop-timeout="240" timestamp="1">
-    <list key="modules" value0="HashTagCultureRest::org.eclipse.jst.j2ee.server:HashTagCultureRest::jst.web::2.3"/>
+  <server hostname="localhost" id="J2EE Preview at localhost" name="J2EE Preview at localhost" runtime-id="J2EE Preview" server-type="org.eclipse.jst.server.preview.server" server-type-id="org.eclipse.jst.server.preview.server" start-timeout="240" stop-timeout="240" timestamp="5">
+    <list key="modules" value0="Spring4::org.eclipse.jst.j2ee.server:Spring4::jst.web::2.4"/>
   </server>
 </servers>

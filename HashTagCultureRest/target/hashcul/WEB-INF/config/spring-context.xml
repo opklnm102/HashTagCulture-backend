@@ -12,11 +12,11 @@
          </bean>
          
         <!--  create rest service object and inject dao -->
-        <bean class="spring.hashcul.service.ContactService" id="contactService">
-               <property name="contactDao" ref="contactdao" />
+        <bean class="spring.hashcul.service.ListService" id="listService">
+               <property name="ListDao" ref="listdao" />
         </bean>
         <!-- declare dao object  -->
-        <bean class="spring.hashcul.dao.ContactDaoImpl" id="contactdao">
+        <bean class="spring.hashcul.dao.ListDaoImpl" id="listdao">
                <property name="sqlSessionFactory" ref="sqlSessionFactory" />
         </bean>
        
