@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.dong.rest.dao.PostDao">
+    <resultMap id="listResultMap" type="me.dong.rest.dto.Post">
+        <result property="id" column="id" />
+        <result property="title" column="title" />
+        <result property="createdAt" column="created_at" />
+    </resultMap>
+    <resultMap id="defaultResultMap" type="me.dong.rest.dto.Post" extends="listResultMap">
+        <result property="content" column="content" />
+        <result property="updatedAt" column="updated_at" />
+    </resultMap>
+    <select id="getPostList" resultMap="listResultMap">
+        select id,
+               title,
+               created_at
+        from   post
+        order by id desc
+    </select>
+
+    <insert id="insertPost" parameterType="me.dong.rest.dto.Post">
+        insert into post (
+            title,
+            content,
+            created_at
+        ) values (
+            #{title},
+            #{content},
+            now()
+        )
+    </insert>
+
+    <select id="getPost" resultMap="defaultResultMap" parameterType="java.lang.Long">
+        select id,
+               title,
+               content,
+               created_at,
+               updated_at
+        from   post
+        where  id = #{postId}
+    </select>
+
+    <update id="updatePost">
+        update post
+           set title = #{title},
+               content = #{content},
+               updated_at = now()
+        where  id = #{id}
+    </update>
+
+    <delete id="deletePost">
+        delete
+        from   post
+        where  id = #{postId}
+    </delete>
+</mapper>
