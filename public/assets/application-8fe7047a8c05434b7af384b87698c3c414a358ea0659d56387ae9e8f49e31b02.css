@@ -1,0 +1,801 @@
+/*
+ Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+ Code licensed under the BSD License:
+ http://developer.yahoo.net/yui/license.txt
+ version: 2.5.1
+ */
+
+html {
+    color: #000;
+    background: #FFF;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+li {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+input, textarea, select {
+
+* font-size:
+    100%;
+}
+
+legend {
+    color: #000;
+}
+.wc-container {
+	font-size: 12px;	
+	font-family: arial, helvetica;
+	height:100%;
+}
+
+.wc-nav {
+	padding: 0.5em;
+	height: 40px;
+}
+
+.wc-nav button {
+	margin: 0 0.2em;	
+}
+
+.wc-nav ul {
+	display: inline;
+}
+
+.wc-nav-left {
+	width: 100%;
+	height: 5px;
+	float: left;
+}
+
+.wc-nav-center {
+	width: 100%;
+	height: 100px;
+
+}
+.wc-nav-left img {
+	margin-right: 10px;
+}
+
+.wc-nav-right {
+	float: right;	
+}
+ 
+.wc-container table {
+	border-collapse: collapse;
+    border-spacing: 0;
+
+}
+
+.wc-container table td {
+	margin: 0;
+	padding: 0;
+}
+
+.wc-header {
+	background: #fff;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	width: 100%;
+}
+
+.wc-header .wc-time-column-header {
+	width: 6%;	
+}
+
+.wc-header .wc-scrollbar-shim {
+	width: 16px;	
+}
+
+.wc-header .wc-day-column-header {
+	text-align: center;
+	padding: 0.4em;
+}
+
+.wc-header td {
+	background-color: #eee;	
+}
+
+.wc-grid-timeslot-header {
+	width: 6%;
+	background: #eee;	
+}
+
+ /* scrollable-grid는 스크롤바*/
+.wc-scrollable-grid {
+	overflow: auto;
+	overflow-x: hidden !important;
+	overflow-y: auto !important; 
+	position: relative;
+	background-color: #fff;
+	width: 100%;
+	height: 920px;
+
+}
+
+
+table.wc-time-slots {
+	width: 100%;
+	height: 100%;
+	table-layout: fixed;
+	cursor: default;
+}
+
+.wc-day-column {
+	width: 13.5%;
+	border-left: 1px solid #ddd;	
+	overflow: visible;
+	vertical-align: top;
+}
+
+.wc-day-column-inner {
+	width: 100%;
+	position:relative;	
+}
+
+.wc-time-slot-wrapper {
+	position:relative;	
+	height: 1px;
+	top: 1px;
+}
+
+.wc-time-slots {
+	position: absolute;	
+	width: 100%;
+}
+
+.wc-time-header-cell {
+	padding: 5px;	
+	height: 80px; /* reference height */
+}
+
+.wc-time-slot {
+	border-bottom: 1px dotted #ddd;	
+}
+
+.wc-hour-header {
+	text-align: right;
+}
+
+.wc-hour-end, .wc-hour-header {
+	border-bottom: 1px solid #ccc;	
+	color: #555;
+}
+
+.wc-business-hours {
+	background-color: #E6EEF1;
+	border-bottom: 1px solid #ccc;
+	color: #333;
+	font-size: 1.4em;
+}
+
+.wc-business-hours .wc-am-pm {
+	font-size: 0.6em;	
+}
+
+.wc-day-header-cell {
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+.wc-time-slot-header .wc-header-cell {
+	text-align: right;
+	padding-right: 10px;	
+}
+
+.wc-header .wc-today  {
+	font-weight: bold;
+
+}
+
+.wc-time-slots .wc-today {
+	background-color: #eeeeee;	
+}
+
+
+.wc-cal-event {
+	background-color: rgb(167, 210, 237);
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+	position: absolute;	
+	text-align: center;
+	overflow: hidden;
+	cursor: pointer;
+	color: #fff;
+	width: 100%;
+	display: none;
+}
+
+
+.wc-cal-event div {
+	padding: 0 5px;
+	
+}
+/**/
+.wc-cal-event .wc-time {
+	background-color: rgb(43, 148, 210);
+	border: 1px solid #1b62c0;
+	color: #fff;
+	padding: 0;
+	font-weight: bold;
+}
+
+.wc-container .ui-draggable .wc-time {
+	cursor: move;
+
+}
+
+.wc-cal-event .wc-title {
+	position: relative;	
+
+}
+
+.wc-container .ui-resizable-s {
+	height: 10px;
+	bottom: -8px;	
+	width: 700px;
+}
+
+
+.wc-container .ui-draggable-dragging {
+   z-index: 1000;
+   width: 400px;
+}
+
+
+div.ui-datepicker-inline {
+	height:220px;
+	background:#ECECED;
+}
+
+.ui-datepicker-header {
+	background: #CECCD0; 
+	border-color: #CECCD0; 
+}
+
+.ui-widget-content {
+	border: 0px solid #BCE4F3;
+  	background: #FFF ;
+}
+
+.ui-widget {
+    font-family: Verdana,Arial,sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.ui-state-default, .ui-widget-content .ui-state-default {
+    border: 1px solid #B8BFC2;
+    background: #F3F1F6  50% 50% repeat-x;
+    font-weight: normal;
+    color: #ffffff;
+    outline: none;
+    text-align: center;
+    border-color: #F8F1F1;
+    color:#000;
+}
+
+.ui-widget-header {
+	color:rgba(0, 0, 0, 0.62);;
+}
+
+div.ui-datepicker-inline {
+    height: 205px;
+    background: #f6f6f8;
+}
+
+
+
+.ui-datepicker-calendar th,thead{
+
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {
+   /* border: 1px solid #C3C3C3; */
+    background: rgba(112, 112, 112, 0)  50% 50% repeat-x;
+    color: #f00;
+    font-weight: bold;
+}
+
+.ui-state-disabled {
+	border: 1px solid #f00;
+}
+
+.ui-datepicker td {
+    border: 1px solid #CACACA;
+    /* padding: 1px; */
+}
+
+.ui-datepicker th {
+	border: 1px solid #CACACA;
+	height:7px;
+	padding: .2em .2em;
+}
+
+h2 {
+    margin: 0.5em 0 ;
+    font-size: 1.4em;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+}
+
+div.wc-container {
+	height:755px;
+}
+
+.ui-dialog-title {
+	color: #fff;
+	font-weight: bold;
+}
+
+.date_holder {
+	font-size:11pt;
+	float:left;
+
+}
+
+.ui-dialog {
+	padding:0em;
+}
+
+.ui-dialog-title-event_edit_container {
+	width: 400px;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    text-align: left;
+    background-color: #FFF;
+    padding: .3em 1em .5em .4em;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    float: right;
+    /* margin: .5em .4em .5em 0; */
+    cursor: pointer;
+    /* padding: .2em .6em .3em .6em; */
+    line-height: 1.4em;
+    width: auto;
+    overflow: visible;
+}
+body {
+	font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+	font-size: 83%;
+	height: 600px;
+}
+
+h1 {
+	padding: 0.5em;
+	font-size: 1.6em;
+} 
+
+h2 {
+	margin: 0.5em 0;
+	font-size: 1.4em;	
+}
+
+
+p {
+	margin: 0.5em;	
+}
+
+.ui-widget {
+	font-size: 1em;	
+}
+
+#event_edit_container, #about {
+	display: none;
+	background-color: #FFF;
+	overflow-x:hidden;
+	overflow-y:hidden;
+
+}
+
+#about_button_container {
+
+	position: absolute;
+	top: 1em;
+	right: 1em;	
+	padding: 0.5em 2em;
+	background: #ddf;
+	border: 1px solid #bbd;
+	width: 10em;
+	text-align: center;
+}
+
+.wc-header td {
+	background: url(images/header-bg.png) repeat-x;
+}
+/*시작시간*/
+label[for=start] {
+    display: block;
+	margin-top:3em;
+	margin-bottom: 0.5em;
+	font-size: 1em;
+	width :250px;
+	margin-left: 5px;
+}
+/*종료시간*/
+label[for=end] {
+	width :250px;
+	display: block;
+	margin-top:0.1em;
+	margin-bottom: 1em;
+	margin-left: 5px;
+	font-size: 1em;
+
+}
+
+label[for=people] {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	font-size: 1em;
+	width:400px;
+	margin-left: 7px;
+	text-align: left;
+}
+/*조장*/
+label[for=title1] {
+    display: block;
+	margin-top:1em;
+	margin-bottom: 0.5em;
+	font-size: 1em;
+	width :260px;
+}
+/*조원1*/
+label[for=title2] {
+    display: block;
+	font-size: 1em;
+	width :259px;
+}
+/*조원2*/
+label[for=title3] {
+    display: block;
+	font-size: 1em;
+	width :286px;
+
+}
+
+label[for=body] {
+    display: block;
+	font-size: 1em;
+	width :43px;
+	margin-left: 3px;
+}
+label {
+	width :185px;
+	display: block;
+	margin-top:0.1em;
+	margin-bottom: 0.5em;
+	font-size: 1em;
+}
+
+
+
+form ul {
+	padding: 0.3em;
+}
+
+select, input[type='text'], textarea {
+	width: 210px;
+	padding: 3px;
+}
+
+input[type='text1'] {
+	padding:3px;
+	margin-left: 26px;
+}
+input[type='text2'] {
+	padding:3px;
+	margin-left: 10px;
+}
+
+
+ul.formatted,ol.formatted {
+	display: block;
+	margin: 1em 0.5em;
+}
+
+ul.formatted li,ol.formatted li {
+	margin: 5px 30px;
+	display: auto;
+}
+
+ul.formatted li {
+	list-style-type: disc;
+}
+
+ol.formatted li {
+	list-style-type: decimal;
+}
+
+
+tbody {
+	height:800px;
+}
+
+
+
+.study-room {
+  width: 95%;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #FFF;
+  cursor: pointer;
+  border: 1;
+  border-color: #fff;
+  padding: 8px 18px;
+  color: #333;
+  font-weight: 600;
+  border-radius: 4px;
+  text-rendering: optimizeLegibility;
+  margin: 5px;
+}
+
+#left-header {
+	height: 105px;
+}
+
+#left-header > a{
+	display: inline;
+	margin-left: 0px;
+}
+#left-header > a > img{
+	margin-top: 15px;
+}
+
+#location {
+  font-size: 25px;
+  font-weight: bold;
+  display: inline-block;
+  float: left;
+  margin-left: 42px;
+  margin-top: 22px;
+  width: 160px;
+  float: left;
+}
+
+.room-category {
+	font-size: 18px;
+}
+
+.wc-nav {
+	font-size: 30px;
+}
+
+.wc-nav > button {
+	font-size: 30px !important;
+}
+html {
+	background-color: #EEEEEE;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active {
+	background-color: #FDBCBC !important;
+}
+@charset "UTF-8";
+/* line 2, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+.room_name {
+  text-align: right;
+  margin-left: 520px;
+  margin-bottom: -10px;
+}
+
+/* line 7, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+#top {
+  background-color: #EEEEEE;
+  width: 100%;
+  height: 50px;
+}
+
+/* line 12, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+#container {
+  text-align: center;
+  width: 100%;
+  background-color: #EEEEEE;
+  height: 772px;
+}
+
+/* line 19, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+#center-box {
+  float: center;
+  margin-left: 234px;
+  background-color: #EEEEEE;
+}
+
+/* line 25, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+#left-box {
+  float: left;
+  background-color: #EEEEEE;
+  width: 234px;
+  height: 732px;
+}
+
+/* line 32, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+#datepicker {
+  float: left;
+}
+
+/* line 35, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+p {
+  font-size: 25px;
+  float: left;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* line 41, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+.css3button {
+  text-align: right;
+  margin-top: 10px;
+  font-weight: bold;
+  width: 800px;
+  background: no-repeat right -131px;
+  background-color: silver;
+  display: inline-block;
+  height: 34px;
+  line-height: 34px;
+  /*이미지의 높이는 쉐도우때문에 37이 아닌 34로 해야 텍스트가 vertical에서 중앙에 있는 것처럼 보임*/
+  padding-bottom: 3px;
+  /*쉐도우가 있는 부분을 여백으로*/
+}
+
+/* line 53, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+.nav--left {
+  float: left;
+}
+
+/* line 57, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+.nav--right {
+  float: right;
+  margin-right: 10;
+}
+
+/* line 62, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+button {
+  float: center;
+  /*margin-top: 5px;*/
+  text-align: center;
+  margin-left: 5px;
+  /*버튼중앙*/
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+/* line 71, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+#line {
+  background: red;
+  position: absolute;
+  z-index: 1;
+}
+
+/* line 76, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation.scss */
+.logout {
+  margin-top: 30px;
+  margin-left: 130px;
+  border: none;
+}
+/* line 1, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation_form.scss */
+.date_holder {
+  font-weight: bold;
+  font-size: 11pt;
+  font-family: verdana;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* line 9, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation_form.scss */
+.time-label {
+  font-weight: bold;
+}
+
+/* line 13, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation_form.scss */
+.time-select {
+  font-size: 10pt;
+  font-weight: normal;
+  width: 160px;
+}
+
+/* line 19, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation_form.scss */
+#event_edit_container > hr {
+  color: #91DCED !important;
+}
+
+/* line 23, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation_form.scss */
+.uid {
+  width: 70px !important;
+  margin-left: 20px !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* line 29, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation_form.scss */
+.name {
+  width: 80px !important;
+  margin-left: 5px !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* line 35, /Users/stompesi/Desktop/Project/study-together-backend/app/assets/stylesheets/reservation_form.scss */
+.form-button {
+  cursor: hand !important;
+  width: 25px !important;
+  font-size: 6pt !important;
+  margin-left: 5px !important;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+
+
+ */
+
